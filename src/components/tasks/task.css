@@ -1,0 +1,32 @@
+.task {
+  padding: 0.5rem;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.task h3 {
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.btn {
+  border: 0;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+.btn + .btn {
+  margin-left: 4px;
+}
+
+.btn-pending {
+  background-color: var(--color-pending);
+}
+
+.btn-doing {
+  background-color: var(--color-doing);
+}
+
+.btn-done {
+  background-color: var(--color-done);
+}
