@@ -14,6 +14,28 @@ export default function Home({ tasks, setTasks }) {
     setTasksDone(tasks.filter((task) => task.status === "done"));
   }, [tasks]);
 
+  const handleUpdateTask = (taskId, status) => {
+    setTasks((prevTasks) => {
+      const updatedTasks = prevTasks.map((task) => {
+        if (task.id === taskId) {
+          return { ...task, status };
+        }
+        return task;
+      });
+
+      return updatedTasks;
+    });
+  };
+
+  const handleDeleteTask = (taskId) => {
+    setTasks((prevTasks) => {
+      // filter out the tasks that are not the id to delete
+      const updatedTasks = prevTasks.filter((task) => task.id !== taskId);
+      // return the updated tasks
+      return updatedTasks;
+    });
+  };
+
   return (
     <div>
       <h1>My Tasks</h1>
@@ -25,19 +47,22 @@ export default function Home({ tasks, setTasks }) {
           tasks={tasksPending}
           type="pending"
           label="Pending"
-          setTasks={setTasks}
+          handleUpdateTask={handleUpdateTask}
+          handleDeleteTask={handleDeleteTask}
         />
         <TaskColumn
           tasks={tasksDoing}
           type="doing"
           label="In Progress"
-          setTasks={setTasks}
+          handleUpdateTask={handleUpdateTask}
+          handleDeleteTask={handleDeleteTask}
         />
         <TaskColumn
           tasks={tasksDone}
           type="done"
           label="Done"
-          setTasks={setTasks}
+          handleUpdateTask={handleUpdateTask}
+          handleDeleteTask={handleDeleteTask}
         />
       </div>
     </div>

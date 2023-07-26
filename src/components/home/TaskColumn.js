@@ -1,20 +1,13 @@
 import React from "react";
 import Task from "../tasks/Task";
 
-export default function TaskColumn({ tasks, label, type, setTasks }) {
-  const handleUpdateTask = (taskId, status) => {
-    setTasks((prev) => {
-      const newTasks = prev.map((prevTask) => {
-        if (prevTask.id === taskId) {
-          prevTask.status = status;
-        }
-        return prevTask;
-      });
-
-      return newTasks;
-    });
-  };
-
+export default function TaskColumn({
+  tasks,
+  label,
+  type,
+  handleUpdateTask,
+  handleDeleteTask,
+}) {
   return (
     <div className="task-col">
       <h2 className="task-col-header">{label}</h2>
@@ -26,6 +19,7 @@ export default function TaskColumn({ tasks, label, type, setTasks }) {
                 key={task.id}
                 task={task}
                 handleUpdateTask={handleUpdateTask}
+                handleDeleteTask={handleDeleteTask}
               />
             );
           })

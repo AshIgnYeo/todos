@@ -4,6 +4,7 @@
   --color-pending: #cbc9c3;
   --color-doing: #e7aa26;
   --color-done: #07d429;
+  --color-danger: #e82a2a;
 }
 
 body {
