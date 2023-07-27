@@ -12,27 +12,26 @@ export default function Task({ task, handleUpdateTask, handleDeleteTask }) {
         onClick={() => handleDeleteTask(task.id)}
       />
 
-      <small>Mark as: </small>
       <div className="actions">
         <button
           className="btn btn-pending"
           onClick={() => handleUpdateTask(task.id, "pending")}
         >
-          <FaClock /> Pending
+          <FaClock />
         </button>
 
         <button
           className="btn btn-doing"
           onClick={() => handleUpdateTask(task.id, "doing")}
         >
-          <FaEdit /> Doing
+          <FaEdit />
         </button>
 
         <button
           className="btn btn-done"
           onClick={() => handleUpdateTask(task.id, "done")}
         >
-          <FaCheckCircle /> Done
+          <FaCheckCircle />
         </button>
       </div>
     </div>

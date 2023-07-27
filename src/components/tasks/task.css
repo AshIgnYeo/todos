@@ -12,6 +12,8 @@
 }
 
 .btn {
+  display: inline-flex;
+  align-items: center;
   border: 0;
   padding: 8px 16px;
   border-radius: 4px;

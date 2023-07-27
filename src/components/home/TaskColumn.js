@@ -10,7 +10,9 @@ export default function TaskColumn({
 }) {
   return (
     <div className="task-col">
-      <h2 className="task-col-header">{label}</h2>
+      <h2 className="task-col-header">
+        {label} ({tasks.length})
+      </h2>
       <div className="tasks">
         {tasks.length ? (
           tasks.map((task) => {
